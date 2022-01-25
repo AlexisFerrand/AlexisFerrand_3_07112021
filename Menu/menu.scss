@@ -60,6 +60,18 @@ header{
 
 
 }
+
+@keyframes coeur {
+    0%{
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
 .menu-restaurants{
     padding-left: 5%;
     padding-right: 5%;
@@ -104,6 +116,7 @@ header{
             }
         }
         &__sans__titre{
+            width: 100%;
             @media screen and (min-width: 992px){
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
@@ -114,6 +127,7 @@ header{
         }
         &__bloc{
             margin-bottom: 30px;
+            width: 100%;
                 @media screen and (min-width: 768px){
                     font-size: 22px;
                     margin-bottom: 45px;
@@ -133,11 +147,32 @@ header{
                         font-size: 36px;
                         padding-left: 45px;
                     }
-                
             }
+            &__coeur{
+                &:hover{
+                    .fa-heart{
+                        display: none;
+                    }
+                    > .plein{
+                        display: inline-block;
+                        animation: coeur 0.2s linear both; 
+                    }
+                }
+            }
+          
+                .plein{
+                    display: none;
+                    color: transparent;
+                    background: linear-gradient(to top, $color-primaire, $color-secondaire);;
+                    -webkit-background-clip: text; 
+                }
                 .fa-heart{
                     padding-left: 8%;
                     font-size: 25px;
+                    cursor: pointer;
+                        &:active{
+
+                        }
                         @media screen and (min-width: 768px){
                             padding-left: 0;
                             font-size: 36px;
@@ -155,6 +190,8 @@ header{
             border-radius: 20px;
             margin-bottom: 5%;
             box-shadow: 0 0 11px #0000003d;
+            
+    
                 @media screen and (min-width: 768px){
                     padding: 3% 20px;
             }
@@ -171,7 +208,8 @@ header{
                 margin-top: 5px;
                 margin-bottom: 0;
                 font-size: 14px;
-                flex-wrap: nowrap;
+                
+                
                     @media screen and (min-width: 768px){
                         font-size: 18px;
                 }

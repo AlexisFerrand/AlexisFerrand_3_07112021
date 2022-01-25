@@ -7,9 +7,11 @@ $color-primaire: #9356DC;
 $color-secondaire: #FF79DA;
 $color-tertiaire: #99E2D0;
 
+$degrade: linear-gradient(-15deg, $color-primaire, $color-secondaire);
 
 body{
     margin: 0;
+    
     
 }
 a{
@@ -166,8 +168,15 @@ header{
                 height: 70px;
                 box-shadow: 0 0 11px #0000003d;
                     &:hover{
+                        background-color: rgba(147, 86, 220, 0.15);
+                            .fa-mobile-alt, .fa-list-ul, .fa-store{
+                                color: $color-primaire;
+                            }
+                    &:active{
+                        
                         background-color: #f5f5f583;
                         box-shadow: 0 0 11px #00000065;
+                    }
                     }
                     @media screen and (min-width: 768px){
                         height: 85px;
@@ -276,10 +285,22 @@ header{
                 height: 220px;
             }
     }
+
+    @keyframes coeur {
+        0%{
+            transform: scale(0.5);
+            opacity: 0;
+        }
+        100%{
+            transform: scale(1.1);
+            opacity: 1;
+        }
+    }
+
     &__bloc{
         margin:auto;
         margin-bottom: 7%;
-        background-color: white;
+        background: white;
         border-radius: 15px;
         box-shadow: 0 0 11px #0000003d;
         margin-left: 5%;
@@ -287,12 +308,31 @@ header{
             &:hover{
                 box-shadow: 0 0 15px #0000007e;
             }
-        .fa-heart{
+        .fa-heart{ 
             font-size: 25px;
+            color: black;
                 @media screen and (min-width: 768px){
                     font-size: 32px;
                 }
         }
+        &__coeur{     
+            &:hover{
+                .fa-heart{
+                    display: none;
+                }
+                > .plein{
+                display: inline-block;
+                animation: coeur 0.2s linear both;             
+                }
+            }
+        }
+        .plein{
+            display: none;
+            color: transparent;
+            background: linear-gradient(to top, $color-primaire, $color-secondaire);;
+            -webkit-background-clip: text; 
+        }
+        
         &__nouveau{
             position: absolute;
             right: 35px;

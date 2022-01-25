@@ -18,7 +18,7 @@ body {
 }
 
 header {
-  margin-top: 3%;
+  margin-top: 2%;
 }
 
 header .header-bloc {
@@ -72,6 +72,32 @@ header .header-bloc .fa-arrow-left {
 @media screen and (min-width: 768px) {
   .image_layout img {
     height: 350px;
+  }
+}
+
+@-webkit-keyframes coeur {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes coeur {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    opacity: 1;
   }
 }
 
@@ -130,6 +156,10 @@ header .header-bloc .fa-arrow-left {
   }
 }
 
+.menu-restaurants__sans__titre {
+  width: 100%;
+}
+
 @media screen and (min-width: 992px) {
   .menu-restaurants__sans__titre {
     display: -ms-grid;
@@ -144,6 +174,7 @@ header .header-bloc .fa-arrow-left {
 
 .menu-restaurants__bloc {
   margin-bottom: 30px;
+  width: 100%;
 }
 
 @media screen and (min-width: 768px) {
@@ -183,9 +214,28 @@ header .header-bloc .fa-arrow-left {
   }
 }
 
+.menu-restaurants__bloc__header__coeur:hover .fa-heart {
+  display: none;
+}
+
+.menu-restaurants__bloc__header__coeur:hover > .plein {
+  display: inline-block;
+  -webkit-animation: coeur 0.2s linear both;
+          animation: coeur 0.2s linear both;
+}
+
+.menu-restaurants__bloc__header .plein {
+  display: none;
+  color: transparent;
+  background: -webkit-gradient(linear, left bottom, left top, from(#9356DC), to(#FF79DA));
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+}
+
 .menu-restaurants__bloc__header .fa-heart {
   padding-left: 8%;
   font-size: 25px;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
@@ -233,8 +283,6 @@ header .header-bloc .fa-arrow-left {
   margin-top: 5px;
   margin-bottom: 0;
   font-size: 14px;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
 }
 
 @media screen and (min-width: 768px) {
