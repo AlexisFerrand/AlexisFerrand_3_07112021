@@ -465,57 +465,70 @@ footer{
     }
     100%{
         opacity: 1;
+        
     }
 }
 
 @keyframes anim-bars-1 {
     0%{
         transform: translateY(-3000px);
+        opacity: 1;
     }
     100%{
         transform: translateY(0px);
+        opacity: 1;
+       
     }
 }
 @keyframes anim-bars-2 {
     0%{
         transform: translateX(3000px);
+        opacity: 1;
     }
     100%{
         transform: translateX(0px);
+        opacity: 1;
+        
     }
 }
 @keyframes anim-bars-3 {
     0%{
         transform: translateY(3000px);
+        opacity: 1;
     }
     100%{
         transform: translateY(0px);
+        opacity: 1;
     }
 }
 @keyframes anim-bars-4 {
     0%{
         transform: translateX(-3000px);
+        opacity: 1;
     }
     100%{
         transform: translateX(0px);
+        opacity: 1;
     }
 }
 
-@keyframes anim-rotate{
+@keyframes anim-container {
     0%{
-        transform: rotateY(0deg);
+        z-index: 999;
     }
     100%{
-        transform: rotateY(360deg);
+       z-index: 999;
     }
 }
+
 .container{
     position: fixed;
     width:100%;
     left:0;right:0;top:0;bottom:0;
     background-color: rgba(255,255,255,0.7);
-    z-index:9999;
-   display: none;
+    z-index:-5;
+    animation: anim-container 2.4s linear;
+   
 
     .load{
         position: absolute;
@@ -526,6 +539,7 @@ footer{
         margin: auto;
         &__txt{
             position: absolute;
+            opacity: 0;
             top: 40%;
             left: 30%;
             font-style: italic;
@@ -538,6 +552,7 @@ footer{
             &-1{
                 position: absolute;
                 left: 0;
+                opacity: 0;
                 height: 100px;
                 width: 10px;
                 background-color: $color-primaire;
@@ -547,6 +562,7 @@ footer{
             }
             &-2{
                 position: absolute;
+                opacity: 0;
                 top: 0;
                 height: 10px;
                 width: 200px;
@@ -556,6 +572,7 @@ footer{
             }
             &-3{
                 position: absolute;
+                opacity: 0;
                 right: 0;
                 height: 100px;
                 width: 10px;
@@ -565,6 +582,7 @@ footer{
             }
             &-4{
                 position: absolute;
+                opacity: 0;
                 bottom: 0;
                 height: 10px;
                 width: 200px;

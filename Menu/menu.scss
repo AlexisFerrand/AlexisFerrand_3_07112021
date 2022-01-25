@@ -98,7 +98,7 @@ header{
                     padding-top: 0;
                 }
             
-            &::after{
+            &::before{
                 margin-top: 24px;
                 content: '';
                 width: 50px;
@@ -106,31 +106,41 @@ header{
                 background: #99e2d0;
                 position: absolute;
                 z-index: 20;
-                left: 7%;
                     @media screen and (min-width: 768px){
                         width: 85px;
                         height: 5px;
-                        left: 6%;
+                        
                         margin-top: 35px;
                     } 
             }
         }
         &__sans__titre{
-            width: 100%;
-            @media screen and (min-width: 992px){
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                row-gap: 3%;
-                column-gap: 3%;
+           display: flex;
+           flex-direction: column;
+            
+      
+            @media screen and (min-width: 768px){
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
 
             }
         }
         &__bloc{
-            margin-bottom: 30px;
-            width: 100%;
+          
                 @media screen and (min-width: 768px){
                     font-size: 22px;
                     margin-bottom: 45px;
+                    font-size: 22px;
+                    margin-bottom: 45px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: stretch;
+                    justify-content: center;
+                    width: 30%;
             }
         }
         &__bloc__header{
@@ -200,18 +210,24 @@ header{
                 margin: 0px;
                 font-weight: 600;
                 font-size: 17px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
                     @media screen and (min-width: 768px){
-                        font-size: 22px;
+                       font-size: 20px;
                 }
             }
             p{
                 margin-top: 5px;
                 margin-bottom: 0;
                 font-size: 14px;
-                
-                
+                -ms-flex-wrap: nowrap;
+                flex-wrap: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
                     @media screen and (min-width: 768px){
-                        font-size: 18px;
+                        font-size: 17px;
                 }
             }
             .prix p{
@@ -222,7 +238,10 @@ header{
                         font-size: 20px;
                 }
             }
-            
+            &__txt{
+                width: 70%;
+        }
+        
         }
 }
 
