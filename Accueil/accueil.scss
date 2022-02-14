@@ -403,6 +403,7 @@ footer{
         }
     img{
         padding-left: 5%;
+        width: 250px;
         filter: invert(1) sepia(0) saturate(5) hue-rotate(0deg);
             @media screen and (min-width: 768px){
                 font-size: 22px;
